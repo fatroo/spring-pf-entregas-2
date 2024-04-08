@@ -35,8 +35,8 @@ public class EnderecoResource {
     @GetMapping
     public Collection<EnderecoResponse> findAll() {
         var entity= service.findAll();
-        var response =  service.toResponse(entity);
-
+        var response = entity.stream().map(service::toResponse).toList();
+        return response;
     }
 
     @Transactional
