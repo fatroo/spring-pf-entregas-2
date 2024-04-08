@@ -1,6 +1,8 @@
 package br.com.fiap.springpfentregas.dto.request;
 
+import jakarta.validation.constraints.NotNull;
+
 public record AbstractRequest(
-        Long id
+        @NotNull(message = "O id é campo obrigatório") Long id
 ) {
 }

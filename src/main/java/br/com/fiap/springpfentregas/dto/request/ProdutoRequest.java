@@ -1,6 +1,10 @@
 package br.com.fiap.springpfentregas.dto.request;
 
+import jakarta.validation.constraints.NotNull;
+
 public record ProdutoRequest(
+
+        @NotNull(message = "O atriburo nome é obrigatório")
 
         String nome,
 
